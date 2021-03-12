@@ -4,13 +4,14 @@ Environment: Anaconda
 OS: Windows 10 64bit
 
 [아나콘다 관련]
-1. 아나콘다를 설치한 이후, "Anaconda Prompt" 또는 "Anaconda Powershell"을 실행하여 커맨드 창을 띄움.
+1. 아나콘다를 설치한 이후, "Anaconda Prompt" 또는 "Anaconda Powershell"을 "**관리자권한**"으로 실행하여 커맨드 창을 띄움.
 2. 아나콘다 자체 업데이트 : 
 * conda update -n base -c defaults conda
 3. 아나콘다에서 가상환경 생성 : 
-* conda create -n tfgpu python=3.7
+* conda create -n tfgpu python=3.7 -y
 * 여기서 tfgpu는 가상환경이름이며, 본인 원하는 대로 지어도 상관없음. 이후 tfgpu는 본인이 생성한 가상환경이름이라 가정함.
 * 주의사항 : 아나콘다를 2021년 이후로 새로 받을 경우, 가상환경 생성시 기본 파이썬 버전이 3.8 혹은 그 이상의 버전이 될 수 있음. 이는 추후 tensorflow-gpu 설치에 영향을 줄 수 있으므로, 위에서처럼 별도로 파이썬 버전을 설정하는 것이 필요.
+* 파이썬 버전은 3.6이나 3.5처럼 낮춰도 됨.
 4. 방금 생성한 가상환경을 활성화시키고 그 안에서 설치하기 :
 * conda activate tfgpu
 
@@ -24,6 +25,13 @@ OS: Windows 10 64bit
 * conda list -n tfgpu
 * 위 명령어를 치고, 가장 왼쪽열에서 cudnn과 CUDA 이름 있는지 확인해보기.
 * 없는 경우, 가상환경 다시 만들고 파이선버전을 다운그레이드하는 것이 좋음. 혹은 TF-GPU버전도 다운된 것으로 명시하는 것 필요(예컨대 2.1.0). 
+
+[텐서플로우 GPU 설치 확인작업]
+1. python 타입핑
+2. import tensorflow 타입핑
+3. print(tensorflow.__version__) 타입핑
+4. 버전(예컨대 2.1.0)이 출력되면 정상 설치된 것임.
+
 
 [기타 참고]
 1. 딥러닝/머신러닝에 종종 사용되는 라이브러리를 한 번에 설치하고 싶은 경우
