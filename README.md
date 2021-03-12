@@ -1,7 +1,10 @@
 # How-to-install-tensorflow-on-Windows
 
-Environment: Anaconda
-OS: Windows 10 64bit
+[Test Environment]
+* Anaconda3 64-bit
+* OS: Windows 10 64bit
+* CPU: Intel i5-10400
+* GPU: GeForce GTX 1660 SUPER
 
 [아나콘다 관련]
 1. 아나콘다를 설치한 이후, "Anaconda Prompt" 또는 "Anaconda Powershell"을 "**관리자권한**"으로 실행하여 커맨드 창을 띄움.
